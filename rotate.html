@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+.container {
+  perspective: 1000px; /* 设置透视效果 */
+  transform-style: preserve-3d; /* 保持3D变换效果 */
+  position: relative;
+  height: 200px;
+  width: 200px;
+  margin: 100px auto;  
+}
+
+.cube1 {
+  animation: rotate 10s linear infinite; /* 旋转动画 */
+  width: 100px;
+  height: 100px;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d; /* 保持3D变换效果 */
+  position: relative;
+}
+
+.cube2 {
+  animation: rotate 40s linear infinite; /* 旋转动画 */
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 25%;
+  left: 25%;
+  transform-style: preserve-3d; /* 保持3D变换效果 */
+}
+
+.cube1 {
+  transform: rotate3d(1, 1, 0, 45deg);
+}
+
+.cube2 {
+  transform: rotate3d(1, 0, 1, 45deg);
+}
+
+.face1, .face2, .face3, .face4, .face5, .face6 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ccc;
+}
+
+.face1 {
+  transform: translate3d(0, 0, 50px);
+}
+
+.face2 {
+  transform: rotateY(180deg) translate3d(0, 0, 50px);
+}
+
+.face3 {
+  transform: rotateY(-90deg) translate3d(0, 0, 50px);
+}
+
+.face4 {
+  transform: rotateY(90deg) translate3d(0, 0, 50px);
+}
+
+.face5 {
+  transform: rotateX(90deg) translate3d(0, 0, 50px);
+}
+
+.face6 {
+  transform: rotateX(-90deg) translate3d(0, 0, 50px);
+}
+
+.cube2 {
+  .face1 {
+  transform: translate3d(0, 0, 25px);
+}
+
+.face2 {
+  transform: rotateY(180deg) translate3d(0, 0, 25px);
+}
+
+.face3 {
+  transform: rotateY(-90deg) translate3d(0, 0, 25px);
+}
+
+.face4 {
+  transform: rotateY(90deg) translate3d(0, 0, 25px);
+}
+
+.face5 {
+  transform: rotateX(90deg) translate3d(0, 0, 25px);
+}
+
+.face6 {
+  transform: rotateX(-90deg) translate3d(0, 0, 25px);
+}
+
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="cube1">
+      <div class="face1"></div>
+      <div class="face2"></div>
+      <div class="face3"></div>
+      <div class="face4"></div>
+      <div class="face5"></div>
+      <div class="face6"></div>
+      <div class="cube2">
+        <div class="face1"></div>
+        <div class="face2"></div>
+        <div class="face3"></div>
+        <div class="face4"></div>
+        <div class="face5"></div>
+        <div class="face6"></div>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
